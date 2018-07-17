@@ -1,0 +1,10 @@
+<h1>List of all the members in the team</h1>
+
+Add team members
+  <%= form_for :teamMembers, method: "Post" do |f| %>
+    <div class="form-group">
+    <%= f.label :users%>
+    <%= f.collection_select :id, User.all, :id, :email %>
+    </div>
+    <%= f.submit 'Add user to team' %>
+  <% end %>

@@ -1,28 +1,28 @@
 class TeamsController < ApplicationController
-    before_action :isManager?, only: [:create, :new]
-    before_action :isAdmin?, only: [:destroy]
+    # before_action :isManager?, only: [:create, :new]
+    # before_action :isAdmin?, only: [:destroy]
   
     def new
         @team = Team.new
     end
 
     def index
+        @teams = Team.all
     end
 
     def create 
-        @team = Team.new(params[:team_params])
-        if(@team.save)
-            #Saved successfully; go to the index (or wherever)...
+        team = Team.new(team_params)
+        if(team.save)
             redirect_to :action => :index
         else    
-            #Validation failed; show the "new" form again...
             render :action => :new  
+            flash.alert = 'Could not create team'
         end
-
     end
 
-
-
+    def show 
+        @teams = Team.all
+    end
 
     private
 

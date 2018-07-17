@@ -1,4 +1,4 @@
-<%= form_for :team do |f| %>
+<%= form_for @team, url: { action: "create" } do |f| %>
   
   <div class="field">
     <%= f.label :name %><br />
@@ -9,6 +9,6 @@
     <%= f.text_field :logo, autofocus:true, placeholder: "logo"%>
   </div>
 
-  <%= f.submit 'Create TEAM' %>
+  <%= f.submit 'Create team' %>
 
 <% end %>

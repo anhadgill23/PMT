@@ -4,13 +4,9 @@
 USER ID <%= current_user.id %> <br>
 USER ROLE <%= current_user.role%>
 <% end %>
-<br>
-<br>
-<br>
-<p>                ye</p>
+
 <%= link_to "logout", destroy_user_session_path, method: :delete %> 
 
-<%= link_to "Login",  new_user_session_path%>         
-<%= link_to "Register",  new_user_registration_path%>         
-
-<%= link_to "Team new", new_team_path%>
+<div>
+    <%= link_to "Create Team", new_team_path %>
+</div>

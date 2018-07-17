@@ -1,1 +1,6 @@
-<p>aef</p>
+<ul>
+<h1><% @teams.each do |team| %></h1>
+    <li> <%= link_to team.name, team_path(team) %></li>
+<% end %>
+<ul>
+
