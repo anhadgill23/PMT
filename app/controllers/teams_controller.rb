@@ -22,6 +22,7 @@ class TeamsController < ApplicationController
 
     def show 
         @teams = Team.all
+        @user = @teams.find(params[:id])
     end
 
     private

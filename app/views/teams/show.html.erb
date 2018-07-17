@@ -1,4 +1,8 @@
 <h1>List of all the members in the team</h1>
+<% team.users.each do |user|%>
+    <%= user %>
+<% end %>
+
 
 Add team members
   <%= form_for :teamMembers, method: "Post" do |f| %>
