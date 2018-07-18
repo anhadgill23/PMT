@@ -1,13 +1,17 @@
-<h1> List of all Projects for the team</h1>
-
-<ul>
-<h4><% @projects.each do |project| %></h4>
-    <li> <%= link_to project.name, team_project_path(project) %></li>
-<% end %>
-<ul>
-
 <%= link_to "logout", destroy_user_session_path, method: :delete %> 
+
+<h1> List of all Projects for the team</h1>
 
 <div>
     <%= link_to "Create Project", new_team_project_path %>
 </div>
+
+<ul>
+<h4><% @projects.each do |project| %></h4>
+    <li> <%= link_to project.name, team_projects_path(project) %></li>
+<% end %>
+<ul>
+
+
+<br>
+<br>

@@ -1,3 +1,5 @@
+<%= link_to "logout", destroy_user_session_path, method: :delete %> 
+
 <%= form_for @team, url: { action: "create" } do |f| %>
   
   <div class="field">

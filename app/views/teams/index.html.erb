@@ -1,3 +1,5 @@
+<%= link_to "logout", destroy_user_session_path, method: :delete %> 
+
 <ul>
 <h1><% @teams.each do |team| %></h1>
     <li> <%= link_to team.name, team_path(team) %></li>
