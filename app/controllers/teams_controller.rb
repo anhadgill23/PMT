@@ -2,12 +2,12 @@ class TeamsController < ApplicationController
     # before_action :isManager?, only: [:create, :new]
     # before_action :isAdmin?, only: [:destroy]
   
-    def new
-        @team = Team.new
-    end
-
     def index
         @teams = Team.all
+    end
+
+    def new
+        @team = Team.new
     end
 
     def create 

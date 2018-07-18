@@ -13,3 +13,7 @@ Add team members
     </div>  
     <%= f.submit 'Add user to team' %>
   <% end %>
+
+  <br>
+
+    <%= link_to 'Projects', team_projects_path(team_id: @team.id) %>
