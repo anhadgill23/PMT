@@ -1,13 +1,18 @@
 class TeamMembersController < ApplicationController
-  def create
-  end
+    def create
+        @team = Team.find(params[:team_id])
+        @user = User.find(member_params[:id])
+        @team.users.push(@user)
+        @team.save
+        redirect_to team_path(id:params[:team_id])
+    end
 
-  def destroy
-  end
+    def destroy
+    end
 
-  private
+    private
 
     def member_params
-        params.require(:team).permit(:name, :logo)
+        params.require(:teamMembers).permit(:id)
     end
 end

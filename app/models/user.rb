@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :task_members
+  has_and_belongs_to_many :tasks
+  has_and_belongs_to_many :teams
+
 
   def manager?
     role === 3 || role === 2

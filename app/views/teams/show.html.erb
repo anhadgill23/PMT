@@ -1,14 +1,15 @@
 <h1>List of all the members in the team</h1>
-<% team.users.each do |user|%>
-    <%= user %>
+<ul>
+<% @team.users.each do |user|%>
+    <li><%= user.email %></li>
 <% end %>
-
+</ul>
 
 Add team members
-  <%= form_for :teamMembers, method: "Post" do |f| %>
+  <%= form_for :teamMembers, url:  team_members_create_path(team_id: @team.id), method: "Post" do |f| %>
     <div class="form-group">
     <%= f.label :users%>
     <%= f.collection_select :id, User.all, :id, :email %>
-    </div>
+    </div>  
     <%= f.submit 'Add user to team' %>
   <% end %>

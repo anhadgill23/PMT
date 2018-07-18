@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
-    has_many :task_members
-    belongs_to :project
+  belongs_to :projects
+  has_and_belongs_to_many :users
 end
