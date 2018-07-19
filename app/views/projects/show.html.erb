@@ -1,0 +1,10 @@
+<%= link_to "logout", destroy_user_session_path, method: :delete %> 
+<br><br>
+
+<h1>List of all the tasks for the team</h1>
+
+<div>
+    <%= link_to "Create a New Task", new_team_project_task_path(team_id: params[:team_id], project_id: params[:id])%>
+</div>
+
+<br>

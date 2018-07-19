@@ -14,6 +14,4 @@ class User < ApplicationRecord
   def admin?
     role === 3
   end
-
-
 end

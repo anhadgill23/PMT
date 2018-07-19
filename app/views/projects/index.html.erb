@@ -8,7 +8,7 @@
 
 <ul>
 <h4><% @projects.each do |project| %></h4>
-    <li> <%= link_to project.name, team_projects_path(project) %></li>
+    <li> <%= link_to project.name, team_project_path(team_id: params[:team_id], id: project.id) %></li>
 <% end %>
 <ul>
 

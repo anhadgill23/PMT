@@ -14,7 +14,11 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        
+        @team = Team.find params[:id]
+        @team.users.delete_all
+        @team.destroy
+        redirect_to teams_path
+        flash.alert = 'The team is deleated'
     end
 
 

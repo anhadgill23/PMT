@@ -1,0 +1,25 @@
+<%= link_to "logout", destroy_user_session_path, method: :delete %> 
+<br><br>
+
+<%= form_for @task, url: { action: "create" } do |f| %>
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus:true, placeholder: "Title"%>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body, autofocus:true, placeholder: "Body"%>
+  </div>
+  <div class="field">
+    <%= f.label :due_date %><br />
+    <%= f.date_field :due_date, autofocus:true, placeholder: "YYYY-DD-MM"%>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :images, autofocus:true, placeholder: "Image"%>
+  </div>
+
+  <%= f.submit 'Create task' %>
+
+<% end %>

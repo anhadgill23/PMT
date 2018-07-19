@@ -1,4 +1,12 @@
 <%= link_to "logout", destroy_user_session_path, method: :delete %> 
+<br>
+<br>
+
+<div>
+    <%= link_to "Create New Team", new_team_path %>
+</div>
+
+<br>
 
 <ul>
 <h1><% @teams.each do |team| %></h1>

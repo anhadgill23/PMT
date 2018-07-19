@@ -1,0 +1,10 @@
+<h1>Tasks </h1>
+<%= link_to "New Task", new_team_project_task_path(team_id:params[:team_id],project_id: params[:project_id]) %></br></br>
+
+<%@tasks.each do |t| %>
+  Title: <%= t.title%></br>
+  Body: <%= t.body%></br>
+  Images: <%= t.images%></br>
+  Due Date: <%= t.due_date%> <br><br>
+
+<%end%>
