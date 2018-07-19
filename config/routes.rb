@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   post 'team_members/create'
   post 'team_members/destroy'
+
+  post 'task_members/create'
+  post 'task_members/destroy'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   root to: "teams#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,16 @@
+<h1>Members</h1>
+<ul>
+<% @task.users.each do |member|%>
+    <li><%= member.email %></li>
+<% end %>
+</ul>
+<br>
+
+Add members
+  <%= form_for :taskMembers, url:  task_members_create_path(team_id: params[:team_id], project_id: params[:project_id], task_id: @task.id), method: "Post" do |f| %>
+    <div class="form-group">
+    <%= f.label :users%>
+    <%= f.collection_select :id, User.all, :id, :email %>
+    </div>  
+    <%= f.submit 'Add user to task' %>
+  <% end %>
