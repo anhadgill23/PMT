@@ -11,7 +11,13 @@ class TaskMembersController < ApplicationController
     end
 
     def destroy
+        @team = Task.find(params[:task_id])
+        @user = User.find(params[:id])
+        @team.users.delete(@user)
+        @team.save
+        redirect_to team_project_task_path(team_id: params[:team_id], project_id: params[:project_id], id:params[:task_id])
     end
+
 
     private
 

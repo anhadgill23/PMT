@@ -20,6 +20,16 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def edit
+        @project = Project.find(params[:id])
+    end
+
+    def update
+        Project.update(params[:id], project_params)
+        redirect_to team_projects_path(params[:team_id])
+        flash.alert = "Updated Project"
+    end
+
     def show
         @project = Project.find(params[:id])
     end

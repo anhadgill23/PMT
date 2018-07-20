@@ -20,6 +20,19 @@ class TeamsController < ApplicationController
         end
     end
 
+    def destroy
+        @team = Team.find params[:id]
+        @team.users.delete_all
+        @team.destroy
+        redirect_to teams_path
+        flash.alert = "deleted team"
+    end
+
+    def update
+        Team.update(params[:id], team_params)
+        redirect_to teams_path
+    end
+
     def show 
         @teams = Team.all
         @team = Team.find(params[:id])
